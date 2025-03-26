@@ -9,7 +9,7 @@ spec:
   accessModes:
     - ReadWriteOnce
   hostPath:
-    path: "/data/n8n"
+    path: "/mnt/data/n8n"
 ---
 apiVersion: v1
 kind: PersistentVolumeClaim
