@@ -3,7 +3,7 @@ kind: StorageClass
 metadata:
   name: n8n-storage
   namespace: n8n
-provisioner: kubernetes.io/no-provisioner
+provisioner: rancher.io/local-path
 ---
 apiVersion: v1
 kind: PersistentVolume

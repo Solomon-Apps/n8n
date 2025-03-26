@@ -24,6 +24,8 @@ spec:
       containers:
       - name: n8n
         image: n8nio/n8n:latest
+        command: ["/usr/local/bin/docker-entrypoint.sh"]
+        args: ["n8n", "start"]
         ports:
         - containerPort: 5678
         env:
