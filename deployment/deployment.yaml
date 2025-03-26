@@ -34,10 +34,10 @@ spec:
         - name: N8N_PROTOCOL
           value: "http"
         - name: N8N_DATA_FOLDER
-          value: "/home/node/.n8n"
+          value: "/"
         volumeMounts:
         - name: n8n-data
-          mountPath: /home/node/.n8n
+          mountPath: /
         resources:
           requests:
             cpu: "500m"
@@ -45,7 +45,7 @@ spec:
           limits:
             cpu: "1000m"
             memory: "10Gi"
-      volumes:
-      - name: n8n-data
-        persistentVolumeClaim:
-          claimName: n8n-data 
+      # volumes:
+      # - name: n8n-data
+      #   persistentVolumeClaim:
+      #     claimName: n8n-data 
