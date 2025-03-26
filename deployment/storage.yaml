@@ -1,3 +1,10 @@
+apiVersion: storage.k8s.io/v1
+kind: StorageClass
+metadata:
+  name: n8n-storage
+  namespace: n8n
+provisioner: kubernetes.io/no-provisioner
+---
 apiVersion: v1
 kind: PersistentVolume
 metadata:
@@ -10,6 +17,8 @@ spec:
     - ReadWriteOnce
   hostPath:
     path: "/var/n8n"
+  storageClassName: n8n-storage
+  volumeMode: Filesystem
 ---
 apiVersion: v1
 kind: PersistentVolumeClaim
@@ -21,4 +30,6 @@ spec:
     - ReadWriteOnce
   resources:
     requests:
-      storage: 10Gi 
+      storage: 10Gi
+  storageClassName: n8n-storage
+  volumeMode: Filesystem 
