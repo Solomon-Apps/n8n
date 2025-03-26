@@ -10,7 +10,7 @@ spec:
     requests:
       storage: 10Gi 
 ---
-apiVersion: "openebs.io/v1alpha1"
+apiVersion: openebs.io/v1alpha1
 kind: MayastorPool
 metadata:
   name: n8n-pool
